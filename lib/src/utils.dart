@@ -15,6 +15,8 @@ Future<List<PlatformFile>> filePathsToPlatformFiles(
         .map((String filePath) async {
       final file = File(filePath);
 
+      print('File '+file.toString());
+
       if (withReadStream) {
         return createPlatformFile(file, null, file.openRead());
       }
